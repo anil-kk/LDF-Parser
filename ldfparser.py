@@ -164,7 +164,7 @@ class LDFParser:
 
     def _parse_signal(self, signal):
         """parse the signals into name, size, init value, publisher and subscribers if supplied"""
-        data = signal.split(':')
+        data = signal.replace('{','').replace('}','').split(':')
         name = data[0]
         data = data[1].split(',')
         raw = {}
